@@ -22,8 +22,8 @@ func main() {
 	magenta := color.New(color.FgMagenta).SprintFunc()
 	green := color.New(color.FgGreen).SprintFunc()
 
-	buffer := make([]byte, 1024)
 	for {
+		buffer := make([]byte, 1024)
 		pc.ReadFrom(buffer)
 		str := strings.Split(string(buffer), ":")
 		metric := str[0]
