@@ -41,6 +41,7 @@ func main() {
 		str := strings.Split(string(buffer), ":")
 		metric := str[0]
 		value := strings.Join(str[1:], ":")
-		fmt.Printf("[%s] StatsD %s\n", magenta(time.Now().String()), Format(metric, value))
+		timeStr := time.Now().Format("15:04:05.000 -0700 MST 2006/01/02")
+		fmt.Printf("[%s] StatsD %s\n", magenta(timeStr), Format(metric, value))
 	}
 }
